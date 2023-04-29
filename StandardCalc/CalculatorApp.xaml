@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Standard_Calculator.StandardCalc.CalculatorApp"
+             Title="CalculatorApp">
+    <VerticalStackLayout>
+        <Frame HeightRequest="350"
+               CornerRadius="0"
+               BorderColor="Transparent"
+               Margin="0,10,0,0">
+            <AbsoluteLayout
+                HeightRequest="350"
+                WidthRequest="390"
+                BackgroundColor="Transparent"
+                IsClippedToBounds="True"
+                >
+                
+                <Label BackgroundColor="Transparent"
+                       HeightRequest="90"
+                       WidthRequest="350"
+                       HorizontalTextAlignment="End"
+                       FontFamily="FASolid"
+                       FontSize="25"
+                       x:Name="entryValue1"
+                       CharacterSpacing="2"
+                       IsVisible="False"
+                       Margin="0,30,0,0"
+                       VerticalTextAlignment="Center"
+                       >
+
+                </Label>
+                
+                <Label BackgroundColor="Transparent"
+                       Margin="0,60,0,0"
+                       HeightRequest="90"
+                       WidthRequest="350"
+                       HorizontalTextAlignment="End"
+                       FontFamily="FASolid"
+                       FontSize="25"
+                       x:Name="entryValue2"
+                       CharacterSpacing="2"
+                       IsVisible="False"
+                       VerticalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="0,100">
+
+                </Label>
+                
+                <Label x:Name="lblOperator"
+                       FontSize="30"
+                       AbsoluteLayout.LayoutBounds="330,122"
+                       IsVisible="False"
+                       FontFamily="FASolid"/>
+
+                <Label x:Name="lblResult"
+                       Text=" "
+                       FontSize="40"
+                       BackgroundColor="Transparent"
+                       AbsoluteLayout.LayoutBounds="250,250"
+                       Margin="25,0,0,0"
+                       HorizontalTextAlignment="End"
+                       HorizontalOptions="EndAndExpand"
+                       
+                       
+                       IsVisible="False"
+                       />
+
+            </AbsoluteLayout>
+        </Frame>
+
+        <Frame BorderColor="Transparent"
+               HeightRequest="370">
+            
+            <Grid BackgroundColor="Transparent"
+                  RowSpacing="10"
+                  ColumnSpacing="10"
+                  WidthRequest="350"
+                  >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0"
+                        Grid.Column="0"
+                        Text="C"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Green"
+                        BackgroundColor="Transparent"
+                        x:Name="clearmemorybtn"
+                        Clicked="clearEntryValuebtn_Clicked"/>
+
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Text="/"
+                        FontSize="35"
+                        FontAttributes="Bold" 
+                        TextColor="Green"
+                        BackgroundColor="Transparent"
+                        x:Name="divisionbtn"
+                        Clicked="OnOperator_Clicked"/>
+
+                <Button Grid.Row="0"
+                        Grid.Column="2"
+                        Text="*"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        FontFamily="FASolid"
+                        TextColor="Green"
+                        BackgroundColor="Transparent"
+                        x:Name="multiplybtn"
+                        Clicked="OnOperator_Clicked"/>
+
+                <Button Grid.Row="0"
+                        Grid.Column="3"
+                        Text="&#xf55a;"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        FontFamily="FASolid"
+                        TextColor="Green"
+                        BackgroundColor="Transparent"
+                        x:Name="clearEntryValuebtn"
+                        Clicked="clearEntryValuebtn_Clicked_1"
+                        />
+
+
+                <Button Grid.Row="1"
+                        Grid.Column="0"
+                        Text="7"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum7"
+                        Clicked="OnNumClicked"/>
+
+                <Button Grid.Row="1"
+                        Grid.Column="1"
+                        Text="8"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum8"
+                        Clicked="OnNumClicked"
+                        />
+                
+                <Button Grid.Row="1"
+                        Grid.Column="2"
+                        Text="9"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum9"
+                        Clicked="OnNumClicked"/>
+
+                <Button Grid.Row="1"
+                        Grid.Column="3"
+                        Text="-"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        FontFamily="FASolid"
+                        TextColor="Green"
+                        BackgroundColor="Transparent"
+                        x:Name="minusbtn"
+                        Clicked="OnOperator_Clicked"/>
+
+
+                <Button Grid.Row="2"
+                        Grid.Column="0"
+                        Text="4"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum4"
+                        Clicked="OnNumClicked"/>
+
+                <Button Grid.Row="2"
+                        Grid.Column="1"
+                        Text="5"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum5"
+                        Clicked="OnNumClicked"/>
+
+                <Button Grid.Row="2"
+                        Grid.Column="2"
+                        Text="6"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum6"
+                        Clicked="OnNumClicked"/>
+
+                <Button Grid.Row="2"
+                        Grid.Column="3"
+                        Text="+"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        FontFamily="FASolid"
+                        TextColor="Green"
+                        BackgroundColor="Transparent"
+                        x:Name="additionbtn"
+                        Clicked="OnOperator_Clicked"/> 
+
+
+                <Button Grid.Row="3"
+                        Grid.Column="0"
+                        Text="1"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum1"
+                        Clicked="OnNumClicked"/>
+
+                <Button Grid.Row="3"
+                        Grid.Column="1"
+                        Text="2"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum2"
+                        Clicked="OnNumClicked"/>
+
+                <Button Grid.Row="3"
+                        Grid.Column="2"
+                        Text="3"
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum3"
+                        Clicked="OnNumClicked"/>
+
+                <Button Grid.Row="3"
+                        Grid.Column="3"
+                        Grid.RowSpan="2"
+                        Text="="
+                        FontSize="35"
+                        FontAttributes="Bold"
+                        TextColor="White"
+                        BackgroundColor="Green"
+                        x:Name="resultbtn"
+                        WidthRequest="50"
+                        HeightRequest="110"
+                        Clicked="resultbtn_Clicked"
+                        />
+
+
+                <Button Grid.Row="4"
+                        Grid.Column="0"
+                        Text="&#x25;"
+                        FontSize="30"
+                        FontAttributes="Bold"
+                        FontFamily="FASolid"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="percentagebtn"
+                        Clicked="OnOperator_Clicked"/>
+
+                <Button Grid.Row="4"
+                        Grid.Column="1"
+                        Text="0"
+                        FontSize="30"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="OnNum0"
+                        Clicked="OnNumClicked"/>
+
+                <Button Grid.Row="4"
+                        Grid.Column="2"
+                        Text="."
+                        FontSize="50"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        x:Name="dotbtn"
+                        Margin="0,-25,0,0"
+                        Clicked="OnNumClicked"
+                        />
+
+            </Grid>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
